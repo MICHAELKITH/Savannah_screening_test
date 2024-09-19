@@ -1,0 +1,16 @@
+# Ignore environment variables
+.env
+
+# Ignore log files
+*.log
+
+# Ignore compiled files
+*.exe
+*.out
+*.so
+
+# Ignore directories
+node_modules/
+vendor/
+bin/
+obj/
