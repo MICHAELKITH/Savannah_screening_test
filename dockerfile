@@ -22,3 +22,4 @@ CMD ["./main"]
 
 #docker build . -t go-containerized:latest
 #docker image ls | grep go-containerized 
+#docker run go-containerized:latest
