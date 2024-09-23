@@ -85,7 +85,7 @@ SMS Sent to customer after order creation
 
 
 ## Conclusion
-My Customer-Order App is set up with Docker, Microk8s, MySQL, Keycloak, and SMS integration. Continuous deployment is managed via Ansible, ensuring my app stays up-to-date with minimal manual intervention.
+My Customer-Order App is set up with Docker, PostgreSQL, and SMS integration. Continuous deployment is managed via Ansible, ensuring my app stays up-to-date with minimal manual intervention.
 
 {
   "name": "Bob Williams",
