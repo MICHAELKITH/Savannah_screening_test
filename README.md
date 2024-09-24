@@ -27,10 +27,10 @@
 Set up a  PostgreSQL database
 
 Created Customers Table
-![alt text](images/customer.png)
+![alt text](images/customers.png)
 
 Created Orders Table
-![alt text](../images/oderstable.png)
+![alt text](images/order_added.png)
 
 Overall Database Schema
 ![alt text](<screenshots/Database Schema.png>)
