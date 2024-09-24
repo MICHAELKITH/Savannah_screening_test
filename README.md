@@ -39,7 +39,7 @@ Overall Database Schema
 Set up Africa's Talking API credentials and configured my application to use these credentials for sending SMS notifications.
 
 SMS Sent to customer after order creation
-![alt text](images/sms2.png)
+![alt text](images/sms.png)
 
 1.  Configured CI/CD Pipeline with Ansible
 I Set up ssh keys on my machine and the server for easier and secure communications.
@@ -81,7 +81,7 @@ Success Adding a Page
 ![alt text](images/addneworder.png)
 
 SMS Sent to customer after order creation
-![alt text](images/sms.png)
+![alt text](images/sms2.png)
 
 
 ## Conclusion
