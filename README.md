@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-1. Clone the repo: ` `
+1. Clone the repo: `https://github.com/MICHAELKITH/Savannah_screening_test.git `
 2. Install dependencies: `go mod tidy`
 3. Run the app: `go run main.go`
 
@@ -30,7 +30,7 @@ Created Customers Table
 ![alt text](images/customers.png)
 
 Created Orders Table
-![alt text](images/order_added.png)
+![alt text](images/orderstable.png)
 
 Overall Database Schema
 ![alt text](<screenshots/Database Schema.png>)
