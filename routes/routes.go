@@ -7,7 +7,9 @@ import (
 
 func SetupRoutes(app *fiber.App) {
 
-    app.Post("/customers", controllers.AddCustomer)
-    app.Post("/orders", controllers.AddOrder)
-	app.Put("/orders/:id", controllers.AddOrder)
+	app.Get("/api/customers", controllers.GetCustomers)
+	app.Post("/api/customers", controllers.AddCustomer)
+	app.Get("/api/orders", controllers.GetOrders)
+	app.Post("/api/orders", controllers.AddOrder)
+	
 }
