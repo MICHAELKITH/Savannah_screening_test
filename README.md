@@ -33,15 +33,15 @@ Created Orders Table
 ![alt text](images/orderstable.png)
 
 Overall Database Schema
-![alt text](<screenshots/Database Schema.png>)
+![alt text](<images/Overal.png>)
 
 1. Configured SMS Notifications
 Set up Africa's Talking API credentials and configured my application to use these credentials for sending SMS notifications.
 
 SMS Sent to customer after order creation
-![alt text](screenshots/SMS-sending.png)
+![alt text](images/sms.png)
 
-10. Configured CI/CD Pipeline with Ansible
+1.  Configured CI/CD Pipeline with Ansible
 I Set up ssh keys on my machine and the server for easier and secure communications.
 
 I tested if I can reach my server after defining my hosts "linux" group,
@@ -58,22 +58,27 @@ Redirected to login with KeyCloak
 ![alt text](screenshots/login-redirect.png)
 
 Simple Homepage
-![alt text](screenshots/home.png)
+![alt text](images/homepage.png)
 
 Add Customer Page
-![alt text](screenshots/add-customer.png)
+![alt text](images/customerpage.png)
 
 Success Adding a Customer
-![alt text](screenshots/customeradded-success.png)
+![alt text](images/customersucces.png)
+
+Add Order Page
+
+![alt text](images/orderspage.png)
+
+
 
 Add Order Page
 ![alt text](images/order_added.png)
-
 Success Adding a Page
 ![alt text](screenshots/add-order-success.png)
 
 SMS Sent to customer after order creation
-![alt text](screenshots/SMS-sending.png)
+![alt text](images/sms.png)
 
 
 ## Conclusion
