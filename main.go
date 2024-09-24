@@ -1,11 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
-	"fmt"
 	"os"
+
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 	"github.com/savannah/sms/clients"
 	"github.com/savannah/sms/config"
@@ -14,7 +16,6 @@ import (
 )
 
 func main() {
-
 	// Load environment variables from .env file
 	if err := godotenv.Load(); err != nil {
 		log.Printf("Error loading .env file: %v", err)
@@ -28,21 +29,21 @@ func main() {
 
 	client, errClient := clients.NewDefaultHttpClient(&http.Client{})
 	if errClient != nil {
-		fmt.Println("error client ", errClient.Error())
+		log.Fatalf("Error creating HTTP client: %v", errClient)
 	}
-	//initialize sms
+
+	// Initialize SMS service
 	smsSrv, errSms := services.NewSmsService(atUsername, atAPIKey, env, client)
 	if errSms != nil {
-		fmt.Println("error client ", errSms.Error())
+		log.Fatalf("Error initializing SMS service: %v", errSms)
 	}
 
-	//call send
+	// Call send (example number, change as necessary)
 	str, errStr := smsSrv.Send("", "+254714707147", "Test msg")
 	if errStr != nil {
-		fmt.Println("error client ", errStr.Error())
+		log.Fatalf("Error sending SMS: %v", errStr)
 	}
-
-	fmt.Printf("sms --> %s", str)
+	fmt.Printf("SMS sent: %s\n", str)
 
 	// Initialize Africa's Talking service
 	config.SetSMSService()
@@ -64,9 +65,18 @@ func main() {
 	// Initialize Fiber app
 	app := fiber.New()
 
+	// Enable CORS with customized settings
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "http://localhost:3000", // Replace "*" with your frontend URL for production
+		AllowMethods:     "GET,POST,PUT,DELETE,OPTIONS",
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		ExposeHeaders:    "Content-Length",
+		AllowCredentials: true,
+	}))
+
 	// Setup routes
 	routes.SetupRoutes(app)
 
 	// Start the server
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":8000"))
 }
