@@ -77,9 +77,6 @@ Add Order Page
 Success Adding a Page
 ![alt text](images/ordersuccess.png)
 
-Success Adding a Page
-![alt text](images/addneworder.png)
-
 SMS Sent to customer after order creation
 ![alt text](images/sms2.png)
 
@@ -89,12 +86,14 @@ My Customer-Order App is set up with Docker, PostgreSQL, and SMS integration. Co
 
 
 
-
+## JSON for customer request
 {
 	"name": "Bob Williams",
 	"code": "CUST005"
 }
   
+
+  ## JSON for customer request
   {
 	"customer_id": 1,
 	"item": "Laptop",
