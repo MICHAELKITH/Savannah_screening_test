@@ -1,0 +1,13 @@
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  code VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  customer_id INT REFERENCES customers(id),
+  item VARCHAR(100) NOT NULL,
+  amount DECIMAL(10, 2) NOT NULL,
+  order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
