@@ -8,6 +8,7 @@ import (
 	"github.com/savannah/sms/config"
 )
 
+// Customer represents the structure of a customer
 type Customer struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
@@ -28,10 +29,32 @@ func AddCustomer(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).SendString("Failed to add customer")
 	}
 
-	return c.Status(fiber.StatusOK).SendString("Customer added successfully!")
+	return c.Status(fiber.StatusOK).JSON(customer)
 }
 
+// GetCustomers fetches all customers from the database
+func GetCustomers(c *fiber.Ctx) error {
+	rows, err := config.DBPool.Query(context.Background(), "SELECT id, name, code FROM customers")
+	if err != nil {
+		log.Printf("Error fetching customers: %v\n", err)
+		return c.Status(fiber.StatusInternalServerError).SendString("Failed to fetch customers")
+	}
+	defer rows.Close()
 
-// Business logic
-// Http // api layer or data layer
-// deploy
+	var customers []Customer
+	for rows.Next() {
+		var customer Customer
+		if err := rows.Scan(&customer.ID, &customer.Name, &customer.Code); err != nil {
+			log.Printf("Error scanning customer: %v\n", err)
+			return c.Status(fiber.StatusInternalServerError).SendString("Failed to fetch customers")
+		}
+		customers = append(customers, customer)
+	}
+
+	if err := rows.Err(); err != nil {
+		log.Printf("Error iterating customers: %v\n", err)
+		return c.Status(fiber.StatusInternalServerError).SendString("Failed to fetch customers")
+	}
+
+	return c.Status(fiber.StatusOK).JSON(customers)
+}
