@@ -77,6 +77,9 @@ Add Order Page
 Success Adding a Page
 ![alt text](screenshots/add-order-success.png)
 
+Success Adding a Page
+![alt text](images/addneworder.png)
+
 SMS Sent to customer after order creation
 ![alt text](images/sms.png)
 
