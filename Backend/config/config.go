@@ -18,7 +18,7 @@ func InitializeDB(dsn string) {
     log.Println("Database connection established !.")
 }
 
-// CloseDB closes the database connection pool
+// CloseDB 
 func CloseDB() {
     if DBPool != nil {
         DBPool.Close()

@@ -75,7 +75,7 @@ Add Order Page
 Add Order Page
 ![alt text](images/order_added.png)
 Success Adding a Page
-![alt text](screenshots/add-order-success.png)
+![alt text](images/ordersuccess.png)
 
 Success Adding a Page
 ![alt text](images/addneworder.png)
@@ -87,13 +87,16 @@ SMS Sent to customer after order creation
 ## Conclusion
 My Customer-Order App is set up with Docker, PostgreSQL, and SMS integration. Continuous deployment is managed via Ansible, ensuring my app stays up-to-date with minimal manual intervention.
 
-{
-  "name": "Bob Williams",
-  "code": "CUST005"
-}
+
+
 
 {
-  "customer_id": 1,
-  "item": "Laptop",
-  "amount": 1200.50
+	"name": "Bob Williams",
+	"code": "CUST005"
 }
+  
+  {
+	"customer_id": 1,
+	"item": "Laptop",
+	"amount": 1200.50
+  }

@@ -8,14 +8,14 @@ import (
 	"github.com/savannah/sms/config"
 )
 
-// Customer represents the structure of a customer
+//  structure of a customer
 type Customer struct {
 	ID   int    `json:"id"`
 	Name string `json:"name"`
 	Code string `json:"code"`
 }
 
-// AddCustomer adds a new customer to the database
+// adds a new customer to the database
 func AddCustomer(c *fiber.Ctx) error {
 	customer := new(Customer)
 	if err := c.BodyParser(customer); err != nil {

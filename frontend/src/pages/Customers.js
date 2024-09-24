@@ -5,7 +5,7 @@ function Customers() {
   const [customers, setCustomers] = useState([]);
   const [name, setName] = useState('');
   const [code, setCode] = useState(''); 
-  const [successMessage, setSuccessMessage] = useState(''); // State for success message
+  const [successMessage, setSuccessMessage] = useState(''); // success message
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/customers') 
@@ -53,7 +53,7 @@ function Customers() {
           />
         </div>
         <div className="mb-4">
-          <label className="block mb-1">Customer Code:</label> {/* Updated label */}
+          <label className="block mb-1">Customer Code:</label> 
           <input
             type="text"
             placeholder="Enter Customer Code" // Updated placeholder
@@ -71,7 +71,7 @@ function Customers() {
       <ul className="bg-white shadow-md rounded-lg p-4">
         {customers.map(customer => (
           <li key={customer.id} className="border-b py-2 last:border-b-0">
-            <p className="font-semibold">{customer.name} - <span className="font-normal">{customer.code}</span></p> {/* Updated to display code */}
+            <p className="font-semibold">{customer.name} - <span className="font-normal">{customer.code}</span></p> 
           </li>
         ))}
       </ul>

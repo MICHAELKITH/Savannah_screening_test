@@ -85,15 +85,15 @@ func GetOrders(c *fiber.Ctx) error {
 		orders = append(orders, order)
 	}
 
-	return c.JSON(orders) // Return the orders as JSON
+	return c.JSON(orders) //  orders as JSON
 }
 
-// sendSMS sends an SMS using Africa's Talking service
+// Talking service
 func sendSMS(phoneNumber, message string) error {
 	// Get credentials from environment variables
 	atUsername := os.Getenv("AT_USERNAME")
 	atAPIKey := os.Getenv("AT_API_KEY")
-	env := os.Getenv("ENV") // e.g., sandbox or production
+	env := os.Getenv("ENV") 
 
 	client, errClient := clients.NewDefaultHttpClient(&http.Client{})
 	if errClient != nil {
