@@ -6,11 +6,21 @@
 - Send SMS alerts using Africa's Talking
 - Database: Uses PostgreSQL for data storage.
 
-## Getting Started
+## Getting Started Backend 
 
 1. Clone the repo: `https://github.com/MICHAELKITH/Savannah_screening_test.git `
-2. Install dependencies: `go mod tidy`
-3. Run the app: `go run main.go`
+2. cd Backend
+3. Install dependencies: `go mod tidy`
+4. Run the app: `go run main.go`
+
+
+## Getting Started Frontend
+1. Clone the repo: `https://github.com/MICHAELKITH/Savannah_screening_test.git `
+2. cd frontend
+3. Install dependencies: `npm install`
+4. Run the app: `npm start`
+
+
 
 
 ## Prerequisites
@@ -41,21 +51,8 @@ Set up Africa's Talking API credentials and configured my application to use the
 SMS Sent to customer after order creation
 ![alt text](images/sms.png)
 
-1.  Configured CI/CD Pipeline with Ansible
-I Set up ssh keys on my machine and the server for easier and secure communications.
-
-I tested if I can reach my server after defining my hosts "linux" group,
-```sh
-ansible linux -m ping
-```
-
 
 ## User Journey
-Login Page
-![alt text](screenshots/Login-page.png)
-
-Redirected to login with KeyCloak
-![alt text](screenshots/login-redirect.png)
 
 Simple Homepage
 ![alt text](images/homepage.png)
@@ -82,7 +79,7 @@ SMS Sent to customer after order creation
 
 
 ## Conclusion
-My Customer-Order App is set up with Docker, PostgreSQL, and SMS integration. Continuous deployment is managed via Ansible, ensuring my app stays up-to-date with minimal manual intervention.
+My Customer-Order App is set up with Docker, PostgreSQL, and SMS integration. 
 
 
 

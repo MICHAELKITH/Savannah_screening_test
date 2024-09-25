@@ -20,6 +20,13 @@ CMD ["./main"]
 
 
 
-#docker build . -t go-containerized:latest
-#docker image ls | grep go-containerized 
-#docker run go-containerized:latest
+# docker build . -t go-app:latest
+#docker image ls | grep go-app 
+#docker run go-app:latest
+#minikube start --driver=docker
+#kubectl get nodes
+#minikube logs
+#minikube start
+#Deploy a Serverless Golang App to Google Cloud Run
+
+
